@@ -2,10 +2,12 @@
 import pandas as pd
 import numpy as np
 
+
 class DeepReinforcementLearning:
     def __init__(self):
         self.assets = []  # List of assets
-        self.historical_data = pd.DataFrame()  # Placeholder for historical financial data
+        # Placeholder for historical financial data
+        self.historical_data = pd.DataFrame()
         self.simulation_environment = None  # Placeholder for simulation environment
         self.trained_model = None  # Placeholder for trained model
         self.reward_metric = ""  # Placeholder for reward metric
@@ -30,7 +32,7 @@ class DeepReinforcementLearning:
         # Evaluate the trained agent's performance
         evaluation_results = self.trained_model.evaluate_performance(test_data)
         return evaluation_results
-    
+
     def fine_tuning_and_optimization(self):
         # Fine-tune and optimize the agent's performance
         self.trained_model.fine_tune()
@@ -40,11 +42,13 @@ class DeepReinforcementLearning:
         trading_system = TradingSystem(self.trained_model)
         trading_system.start_trading()
 
+
 class FinancialMarketSimulation:
     def __init__(self):
         pass
 
     # Define market simulation functions here
+
 
 class DQN:
     def __init__(self):
@@ -64,6 +68,7 @@ class DQN:
         # Fine-tune the model
         pass
 
+
 class TradingSystem:
     def __init__(self, agent):
         self.agent = agent
@@ -71,6 +76,7 @@ class TradingSystem:
     def start_trading(self):
         # Implement real-time trading logic
         pass
+
 
 # Instantiate Deep Reinforcement Learning object
 portfolio_optimization = DeepReinforcementLearning()
