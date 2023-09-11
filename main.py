@@ -8,21 +8,14 @@ class DeepReinforcementLearning:
         self.assets = []  # List of assets
         # Placeholder for historical financial data
         self.historical_data = pd.DataFrame()
-        self.simulation_environment = None  # Placeholder for simulation environment
-        self.trained_model = None  # Placeholder for trained model
+        # Create simulation environment
+        self.simulation_environment = FinancialMarketSimulation()
+        self.trained_model = DQN()  # Perform DQN implementation
         self.reward_metric = ""  # Placeholder for reward metric
 
     def data_collection(self):
         # Gather historical financial data
         self.historical_data = pd.read_csv('financial_data.csv')
-
-    def create_simulation_environment(self):
-        # Create simulation environment
-        self.simulation_environment = FinancialMarketSimulation()
-
-    def deep_q_network_implementation(self):
-        # Perform DQN implementation
-        self.trained_model = DQN()
 
     def reward_system_design(self, metric):
         # Set the reward metric for the agent
@@ -30,8 +23,7 @@ class DeepReinforcementLearning:
 
     def model_evaluation(self, test_data):
         # Evaluate the trained agent's performance
-        evaluation_results = self.trained_model.evaluate_performance(test_data)
-        return evaluation_results
+        return self.trained_model.evaluate_performance(test_data)
 
     def fine_tuning_and_optimization(self):
         # Fine-tune and optimize the agent's performance
@@ -83,12 +75,6 @@ portfolio_optimization = DeepReinforcementLearning()
 
 # Step 1: Data Collection
 portfolio_optimization.data_collection()
-
-# Step 2: Create Simulation Environment
-portfolio_optimization.create_simulation_environment()
-
-# Step 3: Deep Q-Network (DQN) Implementation
-portfolio_optimization.deep_q_network_implementation()
 
 # Step 4: Reward System Design
 portfolio_optimization.reward_system_design(metric='Sharpe Ratio')
